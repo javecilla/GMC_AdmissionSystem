@@ -1,0 +1,64 @@
+name: Deploy Online Admission on push
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  web-deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get the latest code
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+
+      - name: Cache Composer packages
+        id: composer-cache
+        uses: actions/cache@v3
+        with:
+          path: vendor
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-composer-
+
+      - name: Install Composer Dependencies
+        run: composer install --optimize-autoloader --no-dev --no-progress --no-interaction --prefer-dist
+
+      - name: Set appropriate permissions
+        run: |
+          chmod -R 755 storage
+          chmod -R 755 bootstrap/cache
+
+      - name: Sync files
+        uses: easingthemes/ssh-deploy@main
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SOURCE: "."
+          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+          REMOTE_USER: ${{ secrets.REMOTE_USER }}
+          REMOTE_PORT: ${{ secrets.REMOTE_PORT }}
+          TARGET: ${{ secrets.REMOTE_TARGET }}
+          EXCLUDE: "/.git/, /node_modules/, /tests/, /.github/, /phpunit.xml, /LICENSE, /README.md"
+
+      - name: Run remote commands
+        uses: garygrossgarten/github-action-ssh@release
+        with:
+          command: |
+            set -e
+            cd ${{ secrets.REMOTE_TARGET }}
+            chmod -R 755 storage
+            chmod -R 755 bootstrap/cache
+            php artisan migrate --force
+            php artisan optimize:clear
+          host: ${{ secrets.REMOTE_HOST }}
+          username: ${{ secrets.REMOTE_USER }}
+          privateKey: ${{ secrets.SSH_PRIVATE_KEY }}
+          options: '-o KexAlgorithms=+diffie-hellman-group-exchange-sha256'
