@@ -56,7 +56,6 @@ jobs:
             cd ${{ secrets.REMOTE_TARGET }}
             chmod -R 755 storage
             chmod -R 755 bootstrap/cache
-            php artisan migrate --force
             php artisan optimize:clear
           host: ${{ secrets.REMOTE_HOST }}
           username: ${{ secrets.REMOTE_USER }}
