@@ -14,7 +14,7 @@ jQuery(document).ready(function() {
 	let step1Completed = false;
 	let step2Completed = false;
 	let step3Completed = false;
-	
+
 	// ============= FIRST STEP FORM REGISTRATION =============
 	$(document).on('click', '#firstStepBtn', function(e) {
 		e.preventDefault();
@@ -45,9 +45,9 @@ jQuery(document).ready(function() {
 				title: '',
 				title: `Oppss! Warning`,
 				html: `<small>Please complete Step 1 before proceeding.`,
-				imageUrl: "/favicon.png",	
-				imageWidth: 140,	
-				imageHeight: 140,	
+				imageUrl: "/favicon.png",
+				imageWidth: 140,
+				imageHeight: 140,
 				imageAlt: "School-Logo",
 				showConfirmButton: true,
 				confirmButtonText: "Okay",
@@ -81,9 +81,9 @@ jQuery(document).ready(function() {
 				title: '',
 				title: `Oppss! Warning`,
 				html: `<small>Please complete Step 2 before proceeding.`,
-				imageUrl: "/favicon.png",	
-				imageWidth: 140,	
-				imageHeight: 140,	
+				imageUrl: "/favicon.png",
+				imageWidth: 140,
+				imageHeight: 140,
 				imageAlt: "School-Logo",
 				showConfirmButton: true,
 				confirmButtonText: "Okay",
@@ -117,9 +117,9 @@ jQuery(document).ready(function() {
 				title: '',
 				title: `Oppss! Warning`,
 				html: `<small>Please complete Step 3 before proceeding.`,
-				imageUrl: "/favicon.png",	
-				imageWidth: 140,	
-				imageHeight: 140,	
+				imageUrl: "/favicon.png",
+				imageWidth: 140,
+				imageHeight: 140,
 				imageAlt: "School-Logo",
 				showConfirmButton: true,
 				confirmButtonText: "Okay",
@@ -163,12 +163,12 @@ jQuery(document).ready(function() {
 		    showLoaderOnConfirm: true,
 		    allowEscapeKey : false,
 		    allowOutsideClick: false,
-		    preConfirm: (response) => { 
+		    preConfirm: (response) => {
 		      if(!response) {
 		        return false;
 		      } else {
-		        return new Promise(function(resolve) { 
-		          setTimeout(function () { 
+		        return new Promise(function(resolve) {
+		          setTimeout(function () {
 		            //console.table(combinedData);
 		            $.ajax({
 		            	method: 'POST',
@@ -198,7 +198,7 @@ jQuery(document).ready(function() {
 							        	grecaptcha.reset(); // Reinitialize recaptcha widget
 							        	localStorage.clear(); // Clear all stored data in localStorage
 							        	// then redirect to index page
-							        	window.location.href='http://admission.goldenminds.edu.test/';
+							        	window.location.href=`${$('meta[name="app-url"]').attr('content')}`;
 							        });
 					        	} else {
 					        		toastr.error(response.message);

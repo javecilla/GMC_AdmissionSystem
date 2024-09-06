@@ -8,12 +8,12 @@ use Illuminate\Support\Facades\Mail;
 
 class EmailService {
 	private $registedSchedule = [
-		'December 18, 2023 (Monday) - 10:00 AM to 4:00 PM',
-		'December 19, 2023 (Tuesday) - 8:00 AM to 3:00 PM',
-		'December 20, 2023 (Wednesday) - 10:00 AM to 4:00 PM',
-		'December 21, 2023 (Tuesday) - 8:30 AM to 3:30 PM',
-		'December 22, 2023 (Friday) - 7:30 AM to 5:30 PM',
-		'December 23, 2023 (Saturday) - 8:00 AM to 4:30 PM',
+		'September 08, 2023 (Monday) - 10:00 AM to 4:00 PM',
+		'September 09, 2023 (Tuesday) - 8:00 AM to 3:00 PM',
+		'September 10, 2023 (Wednesday) - 10:00 AM to 4:00 PM',
+		'September 11, 2023 (Tuesday) - 8:30 AM to 3:30 PM',
+		'September 06, 2023 (Friday) - 7:30 AM to 5:30 PM',
+		'September 07, 2023 (Saturday) - 8:00 AM to 4:30 PM',
 	];
 
 	public function sendAppointmentSchedule(array $data) {

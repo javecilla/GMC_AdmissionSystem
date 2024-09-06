@@ -10,6 +10,7 @@
 	  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
 	  <meta name="csrf-token" content="{{ csrf_token() }}"/>
 	  <meta name="grecaptcha-key" content="{{ env('GOOGLE_RECAPTCHA_CLIENT_KEY') }}"/>
+	  <meta name="app-url" content="{{ env('APP_URL') }}"/>
 	 	<meta name="description" content="{{ $description }}" />
 		<meta name="abstract" content="Online Admission of {{ config('app.name') }}"  />
 	  <meta name="copyright" content="{{ config('app.name') }}"  />
