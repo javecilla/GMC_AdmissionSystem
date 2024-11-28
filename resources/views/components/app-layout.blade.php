@@ -22,7 +22,7 @@
 	  <meta name='identifier-URL' content='https://sims.goldenminds.edu.ph/auth/login'/>
 	  <meta name='base-URL' content='https://sims.goldenminds.edu.ph'/>
 	  <meta name="msapplication-TileName" content="iRegister - Golden Minds Colleges (Senior High School)" />
-	  <meta name="msapplication-TileImage" content="https://static.goldenmindsbulacan.com/assets/images/gmc/Ak2aX001.png" />
+	  <meta name="msapplication-TileImage" content="https://static.goldenmindsbulacan.com/assets/images/gmc/51sz2og.png" />
 	  <meta name="msapplication-TileColor" content="#f3f3f3" />
 	  <meta name="theme-color" content="#b4813f" />
 	  <meta name="color-scheme" content="light" />
@@ -38,7 +38,7 @@
 	  <meta property="og:url" content="{{ url()->current() }}" />
 	  <meta property="og:title" content="Online Registration (SHS) - Golden Minds Colleges" />
 	  <meta property="og:description" content="{{ $description }}" />
-	  <meta property="og:image" content="https://static.goldenmindsbulacan.com/assets/images/gmc/Ak2aX001.png" />
+	  <meta property="og:image" content="https://static.goldenmindsbulacan.com/assets/images/gmc/51sz2og.png" />
 	  <meta property="og:image:width" content="550"/>
 	  <meta property="og:image:height" content="225"/>
 	  <meta property="og:image:alt" content="Online Registration (SHS) - Golden Minds Colleges" />
@@ -52,7 +52,7 @@
 	  <meta property="twitter:url" content="{{ env('APP_URL') }}" />
 	  <meta property="twitter:title" content="Online Registration (SHS) - Golden Minds Colleges" />
 	  <meta property="twitter:description" content="{{ $description }}" />
-	  <meta property="twitter:image" content="https://static.goldenmindsbulacan.com/assets/images/gmc/Ak2aX001.png" />
+	  <meta property="twitter:image" content="https://static.goldenmindsbulacan.com/assets/images/gmc/51sz2og.png" />
 
 		<link crossorigin="anonymous" rel="shortcut icon" type="image/png" href="https://static.goldenmindsbulacan.com/assets/images/gmc/as2l1f.png" />
 	  <link crossorigin="anonymous" rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://static.goldenmindsbulacan.com/assets/images/gmc/as2l1f-180.png" loading="lazy"/>
@@ -137,7 +137,7 @@
 	  {{-- Footer --}}
 	  <x-footer class="mt-auto text-center mb-4">
     	<small>
-    		<span>&copy; {{ __('2024') }} <a href="https://www.goldenminds.edu.ph/" target="_blank" class="text-dark text-decoration-none">{{ config('app.name') }} (SHS)</a></span><br/>
+    		<span>&copy; {{ __('2024') }} <a href="https://www.goldenminds.edu.ph/" target="_blank" class="text-dark text-decoration-none">{{ config('app.name') }} (Senior High School)</a></span><br/>
     		<span>{{ __('Maintain and Manage by IT Department') }}</span>
     	</small>
   	</x-footer>
