@@ -1,0 +1,392 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&family=Roboto+Flex:opsz,wght@8..144,300&display=swap');
+@import url('https://fonts.bunny.net/css?family=Nunito');
+
+:root {
+  --app-light-brown: #b4813f;
+  --app-semi-brown: #996515;
+  --app-dark-brown: #5a3b2f;
+  --app-dark-black: #000;
+  --app-dirty-white: #f3f3f3;
+  --app-font-poppins: 'Poppins', sans-serif;
+  --app-font-roboto: 'Roboto', sans-serif;
+  --app-font-nunito: 'Nunito', sans-serif;
+}
+::selection {
+  background-color: var(--app-light-brown);
+  color: var(--app-dirty-white);
+  -webkit-background-clip: text;
+   background-clip: text;
+}
+
+/*customizing default scroll bar*/
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 2px grey;
+  border-radius: 1px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cecece;
+  border-radius: 1px;
+  cursor: -webkit-grab;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #cecece;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  overflow-x: hidden;
+  user-select: text !important;
+  direction: ltr;
+  background: #fff;
+/*  background-image: url('/global/assets/images/bg-school.png');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;*/
+  animation: fadeInBackground 1s ease-in;
+}
+
+@keyframes fadeInBackground {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+  body {
+    background-position: center center;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+   overflow-x: hidden!important;
+}
+
+/*Changing the default color of radios and checkbox button*/
+input[type="checkbox"],
+input[type="radio"] {
+  cursor: pointer;
+  accent-color: var(--app-light-brown)!important;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+/*Remove Arrows/Spinners*/
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Remove default arrow up/down in input type number */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+/*change default font size in place holder*/
+input::-webkit-input-placeholder { /* Chrome, Safari, Edge */
+  font-size: 14px;
+}
+input:-moz-placeholder { /* Firefox 18- */
+  font-size: 14px;
+}
+input::-moz-placeholder { /* Firefox 19+ */
+  font-size: 14px;
+}
+input:-ms-input-placeholder { /* Internet Explorer 10+ */
+  font-size: 14px;
+}
+
+/*Moving image*/
+.moving_image {
+   animation: moveUpDown 4s ease-in-out infinite!important;
+   pointer-events: none!important;
+}
+
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+/*Hover show '#'*/
+.hashtag {
+  position: relative;
+} .hashtag:before {
+  content: '#';
+  position: absolute;
+  top: 0;
+  left: -20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+} .hashtag:hover::before {
+  opacity: 1;
+  color: var(--app-light-brown);
+}
+
+/*accordion*/
+.light-accordion {
+  color: #000000;
+  opacity: .9;
+  border-color: var(--bs-border-color);
+  border-radius: 50px!important;
+   padding: 8px;
+} .light-accordion .item {
+  color: #000000;
+  opacity: .9;
+  background-color: #fbfbfb;
+  border: 1px solid #F2F3F2;
+  border-radius: 10px;
+} .light-accordion .header {
+  margin-bottom: 0;
+} .light-accordion .header .button {
+  padding: 15px 25px !important; /* Adds even padding for the button */
+  justify-content: space-between; /* Aligns arrow to the right */
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  font-size: 1rem;
+  color: #000;
+  opacity: .8;
+  text-align: left;
+  background-color: var(--app-dirty-white);
+  border: 0;
+  border-radius: 10px;
+  overflow-anchor: none;
+  transition: var(--bs-accordion-transition);
+}
+.light-accordion .header .button:not(.collapsed) {
+  color: #000000;
+  background-color: rgba(74, 74, 74, 0.10);
+  box-shadow: inset 0 calc(-1 * var(--bs-accordion-border-width)) 0 var(--bs-accordion-border-color);
+} .light-accordion .header .button:hover {
+  opacity: .8;
+   background-color: rgba(74, 74, 74, 0.10);
+} .light-accordion .header .button:focus {
+  z-index: 3;
+  outline: 0;
+  box-shadow: var(--bs-secondary-bg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**Styling header title**/
+.gradient_header {
+  background-image: linear-gradient(to left, #373D3F, #373D3F, #555F61);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+.gradient_bg_icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: .75rem;
+
+  color: #f3f3f3;
+  background: linear-gradient(to left, #5a3b2f, #b4813f)!important;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.description_text {
+  color: #555F61!important;
+  line-height: 25px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+/**End Styling header title**/
+
+/** alert**/
+.alert_description {
+  line-height: 25px;
+  text-align: justify!important;
+  text-justify: inter-word;
+}
+
+/**Styling Form**/
+.form_card, .card_box {
+  padding: 2em;
+  background: #ffffff;
+  border: 2px solid var(--bs-secondary-bg);
+  border-radius: 16px!important;
+  box-shadow: inset 0 calc(-1 * var(--bs-accordion-border-width)) 0 var(--bs-accordion-border-color);
+}
+
+
+
+/** progres bar */
+#seniorHighForm {
+  position: relative;
+  margin-top: 20px;
+}
+
+#progressbar {
+  text-align: center;
+  margin-bottom: 30px;
+  overflow: hidden;
+  color: lightgrey;
+}
+
+#progressbar .active {
+    color: #000000;
+    opacity: .9;
+}
+
+#progressbar li {
+    list-style-type: none;
+    font-size: 12px;
+    width: 25%;
+    float: left;
+    position: relative;
+    z-index: 4;
+}
+
+/*Icons in the ProgressBar*/
+#progressbar #applyingFor:before {
+    font-family: FontAwesome;
+    content: "\f15b";
+}
+
+#progressbar #personalInformation:before {
+    font-family: FontAwesome;
+    content: "\f007";
+}
+
+#progressbar #addressDetails:before {
+    font-family: FontAwesome;
+    content: "\f041";
+}
+
+#progressbar #finishRegistration:before {
+    font-family: FontAwesome;
+    content: "\f00c";
+}
+
+/*ProgressBar before any progress*/
+#progressbar li:before {
+    width: 50px;
+    height: 50px;
+    line-height: 45px;
+    display: block;
+    font-size: 18px;
+    color: grey;
+    background: lightgray;
+    border-radius: 50%;
+    margin: 0 auto 10px auto;
+    padding: 2px;
+    position: relative;
+    z-index: 4!important;
+}
+
+/*ProgressBar connectors*/
+#progressbar li:after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: lightgray;
+    position: absolute;
+    left: 0;
+    top: 25px;
+    z-index: 1;
+}
+
+/*Color number of the step and the connector before it*/
+#progressbar li.active:before, #progressbar li.active:after {
+  color: #f3f3f3;
+  background: linear-gradient(to left, #5a3b2f, #b4813f)!important;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.next_button {
+  border: 1px solid transparent!important;
+  background-image: linear-gradient(to left, #5a3b2f, #b4813f);
+  color: #f3f3f3!important;
+  opacity: .9;
+  padding: 6px 20px!important;
+  margin-right: 7px!important;
+  transition: background-color 0.7s ease, color 0.7s ease, border 0.7s ease;
+} .next_button:hover {
+  transform: scale(1.03)!important;
+}
+
+.back_button {
+  border: 1px solid gray;
+  background: transparent;
+  color: gray;
+  padding: 6px 20px;
+  transition: background-color 0.7s ease, color 0.7s ease, border 0.7s ease;
+} .back_button:hover {
+  transform: scale(1.03)!important;
+}
+/**End Styling Form**/
+
+
+.swal2-loader {
+  display:none;
+  align-items:center;
+  justify-content:center;
+  width:2.2em;
+  height:2.2em;
+  margin:0 1.875em;
+  animation:swal2-rotate-loading 1.5s linear 0s infinite normal;
+  border-width:.25em;
+  border-style:solid;
+  border-radius:100%;
+  border-color:#b4813f rgba(0,0,0,0) #b4813f rgba(0,0,0,0)!important;
+}
