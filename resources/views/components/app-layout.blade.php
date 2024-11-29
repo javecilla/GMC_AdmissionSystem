@@ -11,7 +11,6 @@
 	  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
 	  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
 	  <meta name="author" content="Jerome Avecilla" />
-
 		<meta name="title" content="Online Registration (SHS) - Golden Minds Colleges"/>
 	  <meta name="description" content="{{ $description }}" />
 	  <meta name="abstract" content="Online Registration of {{ config('app.name') }}" />
@@ -20,14 +19,14 @@
 	  <meta name="keywords" content="Golden Minds, student registration, online registration, Bulacan education, admission online, Golden Minds Colleges, Golden Minds Academy" />
 	  <meta name='Classification' content='Education'/>
 	  <meta name='identifier-URL' content='https://sims.goldenminds.edu.ph/auth/login'/>
-	  <meta name='base-URL' content='https://sims.goldenminds.edu.ph'/>
+
 	  <meta name="msapplication-TileName" content="iRegister - Golden Minds Colleges (Senior High School)" />
 	  <meta name="msapplication-TileImage" content="https://static.goldenmindsbulacan.com/assets/images/gmc/51sz2og.png" />
 	  <meta name="msapplication-TileColor" content="#f3f3f3" />
 	  <meta name="theme-color" content="#b4813f" />
 	  <meta name="color-scheme" content="light" />
 
-		<meta name="app-url" content="{{ env('APP_URL') }}"/>
+		<meta name='base-URL' content='{{ env('APP_URL') }}'/>
 		<meta name="expected-hostname" content="iregister.goldenminds.edu.ph" />
 	  <meta name="grecaptcha-client-key" content="{{ env('GOOGLE_RECAPTCHA_CLIENT_KEY') }}" />
 	  <meta name="google-site-verification" content="yn3h_XIX46hpOTXbkr1gnJnX5jjg1Lesyv_xOJHbR9g" />
@@ -148,7 +147,9 @@
 	  <script crossorigin="anonymous" type="application/javascript" src="https://static.goldenmindsbulacan.com/assets/libs/toastr/toastr.min.js"></script>
 	  <script crossorigin="anonymous" type="application/javascript" src="https://static.goldenmindsbulacan.com/assets/libs/animate/js/wow.min.js"></script>
 
-		<script type="text/javascript" src="{{ asset('/global/assets/custom/scripts/global.js?v=0.8.2') }}" defer></script>
+		<script type="text/javascript" src="{{ asset('/global/assets/custom/scripts/common.js?v=0.8.2') }}" defer></script>
+		<script type="text/javascript" src="{{ asset('/global/assets/custom/scripts/helpers.js?v=0.8.2') }}" defer></script>
+		<script type="text/javascript" src="{{ asset('/global/assets/custom/scripts/functions.js?v=0.8.2') }}" defer></script>
   	<script type="text/javascript" src="{{ asset('/global/assets/custom/scripts/shs.js?v=0.8.2') }}" async defer></script>
   	<script type="text/javascript" src="{{ asset('/global/assets/custom/scripts/registration.js?v=0.8.2') }}" defer></script>
   </body>

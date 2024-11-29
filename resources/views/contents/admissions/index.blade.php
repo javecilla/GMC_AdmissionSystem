@@ -226,50 +226,34 @@
 											<small>School Year <span class="text-danger">*</span></small>
 											<div class="schoolYearField">
 										    {{-- data fetch via loop --}}
-										    <select name="schoolYear" id="schoolYear" class="form-select schoolYear">
-										    	<option value="" selected>-- SELECT --</option>
-									    	</select>
 										  </div>
 										</div>
 
 										<div class="mb-2">
 											<small>Semester <span class="text-danger">*</span></small>
-											<select name="semester" id="semester" class="form-select semester">
-									     	<option value="" selected>-- SELECT --</option>
-									      <option value="1st">1st</option>
-									     	<option value="2nd">2nd</option>
-									    </select>
-									  	<div class="invalid-feedback semesterInvalid"></div>
+											<div class="semesterField">
+										    {{-- data fetch via loop --}}
+										  </div>
 										</div>
 
 										<div class="mb-2">
 											<small>Campus (Select your preferred Golden Minds Campus.)<span class="text-danger">*</span></small>
-											<select name="branchCampus" id="branchCampus" class="form-select branchCampus">
-									     	<option value="" selected>-- SELECT --</option>
-									      <option value="Golden Minds Colleges of Balagtas, Bulacan, Inc.">Golden Minds Colleges of Balagtas, Bulacan, Inc.</option>
-									     	<option value="Golden Minds Colleges of Sta. Maria, Bulacan, Inc.">Golden Minds Colleges of Sta. Maria, Bulacan, Inc.</option>
-									     	<option value="Golden Minds Colleges of Pandi, Bulacan, Inc.">Golden Minds Colleges of Pandi, Bulacan, Inc.</option>
-									    </select>
-									  	<div class="invalid-feedback branchCampusInvalid"></div>
+											<div class="branchField">
+										    {{-- data fetch via loop --}}
+										  </div>
 										</div>
 
 										<div class="mb-2">
-											<small>Grade Level <span class="text-danger">*</span></small>
-											<select name="gradeLevel" id="gradeLevel" class="form-select gradeLevel">
-									      <option value="" selected>-- SELECT --</option>
-									      <option value="11">11</option>
-									      <option value="12">12</option>
-									    </select>
-									    <div class="invalid-feedback gradeLevelInvalid"></div>
+											<small>Year Level <span class="text-danger">*</span></small>
+											<div class="yearLevelField">
+										    {{-- data fetch via loop --}}
+										  </div>
 										</div>
 
 										<div class="mb-2">
 											<small>Strand <span class="text-danger">*</span></small>
-											<div class="trackOrStrandsField">
+											<div class="strandField">
 										    {{-- data fetch via loop --}}
-										    <select name="strand" id="strand" class="form-select strand">
-										    	<option value="" selected>-- SELECT --</option>
-									    	</select>
 										  </div>
 										</div>
 
@@ -328,6 +312,15 @@
 									    </div>
 										</div>
 										<div class="mb-2">
+											<small>Gender <span class="text-danger">*</span></small>
+											<select name="gender" id="gender" class="form-select gender">
+									      <option value="" selected>-- SELECT --</option>
+									      <option value="M">Male</option>
+									      <option value="F">Female</option>
+									    </select>
+									    <div class="invalid-feedback genderInvalid"></div>
+										</div>
+										<div class="mb-2">
 											<small>Email (Please enter your active email address. We will use it to send your appointment schedule.) <span class="text-danger">*</span></small>
 											<input type="text" id="email" class="form-control email"
 								    		placeholder="john.doe@mail.net"
@@ -336,26 +329,10 @@
 										</div>
 										<div class="mb-2">
 											<small>Contact Number <span class="text-danger">*</span></small>
-											<input type="number" id="ccontactNo" class="form-control mb-2 contactNo"
+											<input type="number" id="contactNo" class="form-control mb-2 contactNo"
 								      	placeholder="09#######33"
 								      />
 								      <div class="invalid-feedback contactNoInvalid mb-2"></div>
-										</div>
-										<div class="mb-2">
-											<small>Social Media Account (Facebook)</small>
-											<div class="row">
-							    			<div class="col-md-6 ">
-									    		<input type="text" class="form-control mb-2 firstName" id="fbAccountName"
-									      		placeholder="Account Name"
-									      	/>
-									      	<div class="invalid-feedback fbAccountNameInvalid mb-2"></div>
-							    			</div>
-									    	<div class="col-md-6">
-									    		<input type="text" class="form-control mb-2" id="fbAccountLink"
-									      		placeholder="Account Link (Optional)"
-									      	/>
-									    	</div>
-									    </div>
 										</div>
 									</div>
 								</div>
@@ -369,10 +346,8 @@
 
 								<hr class="text-muted" />
 
-
-
-								<button type="submit" name="submit" class="btn btn-light w-100 next_button" id="submitRegistrationFormBtn">
-							  	Register
+								<button type="submit" name="submit" class="btn btn-light w-100 next_button" id="submitRegistrationFormBtn" disabled>
+							  	Loading...
 			 					</button>
 							</form>
 						</div>

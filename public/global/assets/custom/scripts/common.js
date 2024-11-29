@@ -22,3 +22,10 @@ toastr.options = {
 //enable popovers
 const popoverTriggerList = $('[data-bs-toggle="popover"]');
 const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl));
+
+const BASE_URL = $('meta[name="base-URL"]').attr('content');
+
+const HEADERS = {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json'
+};

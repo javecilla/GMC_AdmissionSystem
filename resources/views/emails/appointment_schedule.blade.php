@@ -27,8 +27,11 @@
 	    <strong>{{ $data['schedule'] }}</strong> {{ __('in') }}
 	    @if(str_contains($data['school'], 'Sta. Maria'))
 	        <strong>{{ __('2nd Floor Mega Mart Building Bypass Rd, Sta. Maria.') }} </strong>
-	    @else
+	    @elseif(str_contains($data['school'], 'Balagtas'))
 	        <strong>{{ __('2nd Floor D&A Building Mc Hi-way, Balagtas.') }}</strong>
+	    @elseif(str_contains($data['school'], 'Pandi'))
+	        <strong>{{ __('Brgy.Gulod Poblacion, Pandi.') }}</strong>
+	    @else
 	    @endif
     </small>
 </p>

@@ -36,7 +36,7 @@ class RecaptchaService {
 		// Check if recaptcha api response is valid
 		if (!empty($captchaResponse) && $captchaResponse->success) {
 			// success
-			return ['success' => true, 'message' => 'Recaptcha validated'];
+			return true;
 		} else {
 			throw new InvalidRecaptchaException(
 				!empty($errorAPI) ? $errorAPI : "Captcha error! Please try again later.", 422

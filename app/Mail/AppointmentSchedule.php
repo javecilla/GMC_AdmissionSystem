@@ -25,7 +25,7 @@ class AppointmentSchedule extends Mailable {
 	 */
 	public function envelope(): Envelope {
 		return new Envelope(
-			subject: '<no-reply>' . config('app.name') . ' Online Applicant Submission Notice',
+			subject: '<no-reply>' . config('app.name') . ' Online Registration Submission Notice',
 			from: new Address(
 				env('MAIL_FROM_ADDRESS'),
 				config('app.name') . ' Office of the Admission and Online Services',
